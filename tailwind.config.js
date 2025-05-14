@@ -10,6 +10,7 @@ export default {
       },
       colors: {
         brand: {
+          white: '#fff',
           default: '#FBF6ED',
           primary: '#FFBB55',
           secondary: '#000',

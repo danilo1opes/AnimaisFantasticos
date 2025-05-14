@@ -1,8 +1,13 @@
-import Navbar from './components/Navbar.js';
+import { Layout } from './Layout.js';
+import { Navbar } from './components/Navbar.js';
 function App() {
   return (
     <>
-      <Navbar />
+      <Layout>
+        <main className="col-start-3 col-end-5">
+          <Navbar />
+        </main>
+      </Layout>
     </>
   );
 }
