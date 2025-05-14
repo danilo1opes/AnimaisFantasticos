@@ -3,6 +3,11 @@ export default {
   content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        mono: ['"IBM Plex Mono"', 'monospace'],
+        serifLogo: ['"Playfair Display SC"', 'serif'],
+        helvetica: ['Helvetica', 'Arial', 'sans-serif'],
+      },
       colors: {
         brand: {
           default: '#FBF6ED',
