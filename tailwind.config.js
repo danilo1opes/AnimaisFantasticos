@@ -15,6 +15,7 @@ export default {
           primary: '#FFBB55',
           secondary: '#000',
           red: '#ED5544',
+          redSix: '#dc2626',
           paragraph: '#222222',
         },
       },

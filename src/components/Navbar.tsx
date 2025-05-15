@@ -1,11 +1,16 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-export function Navbar() {
+
+interface NavbarProps {
+  onLoginClick: () => void;
+}
+export function Navbar({ onLoginClick }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const ToogleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   return (
     <>
       <header>
@@ -46,7 +51,7 @@ export function Navbar() {
                 </a>
               </li>
               <li>
-                <a className="py-2" href="#">
+                <a onClick={onLoginClick} className="py-2" href="#">
                   Login →
                 </a>
               </li>
@@ -64,7 +69,7 @@ export function Navbar() {
                 padding: '20px 20px 20px 0',
               }}
             >
-              <ul className="font-bold uppercase flex flex-col space-y-4 py-4">
+              <ul className="font-bold uppercase ml-4 flex flex-col space-y-4 py-4">
                 <li>
                   <a className="py-2" href="#">
                     Animais
@@ -81,7 +86,7 @@ export function Navbar() {
                   </a>
                 </li>
                 <li>
-                  <a className="py-2" href="#">
+                  <a onClick={onLoginClick} className="py-2" href="#">
                     Login →
                   </a>
                 </li>
