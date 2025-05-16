@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Layout } from './Layout.js';
-import { Navbar } from './components/Navbar.js';
-import { Modal } from './components/Modal.js';
+import { Navbar } from './Components/Navbar.js';
+import { Modal } from './Components/Modal.js';
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
