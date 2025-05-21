@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { animaisData } from '../Data/AnimaisParagrafos';
+import { animaisData } from '../Data/AnimalsParagraphs';
 
 export function Introduction() {
   const world = 'Animais Fantásticos';
@@ -32,7 +32,7 @@ export function Introduction() {
       {/* Lista de animais */}
       <div className="col-span-1">
         <ul
-          className="h-[370px] max-h-[300px] md:max-h-[370px] overflow-auto cursor-pointer border border-gray-300 rounded-lg p-2"
+          className="h-[370px] max-h-[300px] md:max-h-[370px] overflow-auto cursor-pointer border border-brand-cardBorder rounded-lg p-2"
           onClick={(e) => {
             const li = (e.target as HTMLElement).closest('li');
             if (li) {
@@ -48,8 +48,8 @@ export function Introduction() {
               key={index}
               className={`flex items-center gap-2 p-2 transition-all rounded-lg ${
                 selectedAnimalIndex === index
-                  ? 'bg-gray-300'
-                  : 'hover:bg-gray-200'
+                  ? 'bg-brand-cardBorder'
+                  : 'hover:bg-brand-surfaceLight'
               }`}
             >
               <img
@@ -67,7 +67,7 @@ export function Introduction() {
 
       {/* Descrição do animal */}
       <div className="col-span-1 md:col-span-2 xl:col-span-1">
-        <section className="bg-gray-100 p-6 rounded-lg shadow-md">
+        <section className="bg-brand-gray p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-bold mb-3 border-b pb-2">
             {animaisData[selectedAnimalIndex].nome}
           </h2>
