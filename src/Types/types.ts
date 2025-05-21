@@ -3,3 +3,9 @@ export interface Animal {
   nome: string;
   descricao: string[];
 }
+
+export interface Answers {
+  id: number;
+  pergunta: string;
+  resposta: string;
+}
