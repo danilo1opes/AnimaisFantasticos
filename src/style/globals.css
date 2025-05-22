@@ -46,21 +46,20 @@
   .faq-question::before {
     content: '';
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: #ffbb55;
-  }
-  .faq-question::after {
-    content: '';
-    display: inline-block;
     width: 12px;
     height: 12px;
-    background-image: url('/icon/arrow.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: #ffbb55;
+  }
+
+  .icon {
     margin-left: 8px;
     vertical-align: middle;
+    transform-origin: center;
+    transform: rotate(0deg);
+  }
+
+  .icon.rotate {
+    transform: rotate(180deg);
   }
 }
 
