@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import { questionsData } from '../Data/Questions';
+
 export function Faq() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -13,37 +14,51 @@ export function Faq() {
   }
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-1fr gap-6 px-6 md:px-10 mb-16">
-      <div className="col-span-1 md:col-span-2">
-        <h1 className="text-5xl mt-8 xl:text-[6rem]/[1.1]  uppercase">Faq</h1>
+    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 md:mt-20 sm:mt-8 mb-12 sm:mb-16">
+      {/* Título */}
+      <div className="mb-8 sm:mb-12">
+        <h1 className="text-5xl mt-12 sm:text-4xl md:text-5xl lg:text-6xl xl:text-[6rem] leading-tight uppercase">
+          Faq
+        </h1>
       </div>
 
-      {/* Perguntas e Respostas */}
-      <div>
-        <div>
-          {questionsData.map((item, index) => (
-            <dl className="mb-6 md:mt-8" key={index}>
-              <dt
-                onClick={() => handleClick(index)}
-                className="flex justify-between items-center faq-question text-lg text-brand-redSix hover:underline cursor-pointer"
-              >
-                {item.pergunta}
-                <FaChevronDown
-                  className={`ml-2 transition-transform duration-300 ${
-                    activeIndex === index ? 'rotate-180' : 'rotate-0'
-                  }`}
-                />
-              </dt>
-              <dd
-                className={`${
-                  activeIndex === index ? 'block' : 'hidden'
-                } text-start text-brand-secondary mt-2`}
-              >
+      <div className="space-y-4 sm:space-y-6">
+        {questionsData.map((item, index) => (
+          <div
+            key={index}
+            className="border-b border-brand-surfaceLight pb-4 sm:pb-6 last:border-b-0"
+          >
+            {/* Pergunta */}
+            <button
+              onClick={() => handleClick(index)}
+              className="w-full flex justify-between items-center gap-4 text-left faq-question text-lg sm:text-lg md:text-xl text-brand-redSix hover:underline cursor-pointer transition-colors duration-200"
+              aria-expanded={activeIndex === index}
+              aria-controls={`faq-answer-${index}`}
+            >
+              <span className="pr-4 flex-1">{item.pergunta}</span>
+              <FaChevronDown
+                className={`flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 mt-1 transition-transform duration-300 ${
+                  activeIndex === index ? 'rotate-180' : 'rotate-0'
+                }`}
+                aria-hidden="true"
+              />
+            </button>
+
+            {/* Resposta */}
+            <div
+              id={`faq-answer-${index}`}
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                activeIndex === index
+                  ? 'max-h-96 opacity-100 mt-3 sm:mt-4'
+                  : 'max-h-0 opacity-0'
+              }`}
+            >
+              <p className="text-base sm:text-base md:text-lg text-brand-secondary leading-relaxed pl-0 sm:pl-2">
                 {item.resposta}
-              </dd>
-            </dl>
-          ))}
-        </div>
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
