@@ -1,6 +1,6 @@
 import { AiOutlinePercentage } from 'react-icons/ai';
 import { HiOutlineHashtag } from 'react-icons/hi';
-import { numbersData } from '@/Data/NumbersData';
+import { numbersData } from '../Data/NumbersData';
 
 export function Numbers() {
   return (
