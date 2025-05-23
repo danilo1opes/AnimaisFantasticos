@@ -1,4 +1,4 @@
-import type { Animal } from '../types/types';
+import type { Animal } from '@/types/types';
 
 export const animaisData: Animal[] = [
   {
@@ -46,7 +46,7 @@ export const animaisData: Animal[] = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     nome: 'Lobo',
     descricao: [
       'O lobo (Canis lupus) é um mamífero carnívoro da família dos canídeos, amplamente conhecido por sua inteligência, força e vida social estruturada. É o maior membro da família, com pelagem que varia de tons acinzentados a brancos, pretos ou marrons, dependendo da subespécie e do habitat.',
