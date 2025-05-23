@@ -4,6 +4,7 @@ import { Navbar } from './Components/Navbar.js';
 import { Modal } from './Components/Modal.js';
 import { Introduction } from './Components/Introduction.js';
 import { Faq } from './Components/Faq.js';
+import { Numbers } from './Components/Numbers.js';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,6 +16,7 @@ function App() {
         </main>
         <div className="md:col-start-2 md:col-end-5 box-border">
           <Introduction />
+          <Numbers />
           <Faq />
         </div>
         {/* Modal de Login */}

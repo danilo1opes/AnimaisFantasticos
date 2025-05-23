@@ -19,7 +19,7 @@ export function Introduction() {
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1fr_2fr] gap-6 px-6 md:px-10 mb-16">
       {/* Título */}
       <div className="col-span-1 md:col-span-2">
-        <h1 className="text-4xl mt-8 xl:text-[6rem]/[1.1]  uppercase">
+        <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[6rem] leading-tight uppercase">
           {world.split(' ').map((word, index) => (
             <span key={index}>
               {word}
@@ -30,7 +30,7 @@ export function Introduction() {
       </div>
 
       {/* Lista de animais */}
-      <div className="col-span-1">
+      <div className="md:col-span-2 xl:col-span-1">
         <ul
           className="h-[370px] max-h-[300px] md:max-h-[370px] overflow-auto cursor-pointer border border-brand-cardBorder rounded-lg p-2"
           onClick={(e) => {
