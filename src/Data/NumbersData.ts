@@ -1,4 +1,4 @@
-import type { Number } from '@/types/types';
+import type { Number } from '../types/types';
 
 export const numbersData: Number[] = [
   {

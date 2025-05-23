@@ -1,4 +1,4 @@
-import type { Animal } from '@/types/types';
+import type { Animal } from '../types/types';
 
 export const animaisData: Animal[] = [
   {
