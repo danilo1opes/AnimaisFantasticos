@@ -1,6 +1,6 @@
 import { X } from 'lucide-react';
 import { Input } from './Input';
-import { useForm } from '../Hooks/useForm';
+import { useForm } from '../hooks/useForm';
 
 interface ModalProps {
   isOpen: boolean;
