@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Layout } from './Layout';
-import { Navbar } from './Components/Navbar';
-import { Modal } from './Components/Modal';
-import { Introduction } from './Components/Introduction';
-import { Faq } from './Components/Faq';
-import { Numbers } from './Components/Numbers';
+import { Layout } from './Layout.tsx';
+import { Navbar } from './components/Navbar.tsx';
+import { Modal } from './components/Modal.tsx';
+import { Introduction } from './components/Introduction.tsx';
+import { Faq } from './components/Faq.tsx';
+import { Numbers } from './components/Numbers.tsx';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
