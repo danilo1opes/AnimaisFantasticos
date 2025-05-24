@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
-import { questionsData } from '../data/Questions';
-
+import { questionsData } from '../Data/Questions';
 export function Faq() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
