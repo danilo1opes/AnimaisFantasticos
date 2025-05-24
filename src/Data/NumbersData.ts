@@ -1,4 +1,4 @@
-import type { StatCard } from '../types/types';
+import type { StatCard } from '../interfaces/types';
 
 export const numbersData: StatCard[] = [
   {

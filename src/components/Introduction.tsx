@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { animaisData } from '../Data/AnimalsParagraphs';
+import { animaisData } from '../data/AnimalsParagraphs';
 
 export function Introduction() {
   const world = 'Animais Fantásticos';
