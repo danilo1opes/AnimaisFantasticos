@@ -1,6 +1,6 @@
-import type { Number } from '../types/types';
+import type { StatCard } from '../types/types';
 
-export const numbersData: Number[] = [
+export const numbersData: StatCard[] = [
   {
     id: 1,
     title: 'Lobos',

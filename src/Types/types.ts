@@ -12,10 +12,10 @@ export interface Answers {
   resposta: string;
 }
 
-export interface Number {
+export interface StatCard {
   id: number;
   title: string;
   icon?: IconType;
-  value: string;
+  value: number | string;
   color?: string;
 }
