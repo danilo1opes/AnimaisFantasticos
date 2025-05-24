@@ -72,7 +72,7 @@ export function Introduction() {
             {animaisData[selectedAnimalIndex].nome}
           </h2>
           {animaisData[selectedAnimalIndex].descricao.map(
-            (paragrafo, index) => (
+            (paragrafo: string, index: number) => (
               <p key={index} className="text-base leading-relaxed mb-3">
                 {paragrafo}
               </p>
