@@ -20,6 +20,7 @@ export default {
           paragraph: '#222222',
           surfaceLight: '#e5e7eb',
           cardBorder: '#d1d5db',
+          cardBackground: '#FFC107',
         },
       },
     },
