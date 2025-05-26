@@ -29,19 +29,19 @@ export function Contato() {
           <div>
             <ul className="flex flex-col gap-6">
               <li className="flex items-center gap-4">
-                <MdMailOutline className="bg-brand-cardBackground w-12 h-12 text-brand-white p-2 rounded" />
+                <MdMailOutline className="bg-brand-primary w-12 h-12 text-brand-white p-2 rounded" />
                 <p className="text-xl">parceriasnyx@gmail.com</p>
               </li>
               <li className="flex items-center gap-4">
-                <MdOutlinePhone className="bg-brand-cardBackground w-12 h-12 text-brand-white p-2 rounded" />
+                <MdOutlinePhone className="bg-brand-primary w-12 h-12 text-brand-white p-2 rounded" />
                 <p className="text-xl">(62) 99237-3284</p>
               </li>
               <li className="flex items-center gap-4">
-                <MdLocationPin className="bg-brand-cardBackground w-12 h-12 text-brand-white p-2 rounded" />
+                <MdLocationPin className="bg-brand-primary w-12 h-12 text-brand-white p-2 rounded" />
                 <p className="text-xl">Rua Fictícia, n°23</p>
               </li>
               <li className="flex items-center gap-4">
-                <MdMap className="bg-brand-cardBackground w-12 h-12 text-brand-white p-2 rounded" />
+                <MdMap className="bg-brand-primary w-12 h-12 text-brand-white p-2 rounded" />
                 <p className="text-xl">Goiania, Goias</p>
               </li>
             </ul>
