@@ -6,6 +6,7 @@ import { Introduction } from './components/Introduction.tsx';
 import { Faq } from './components/Faq.tsx';
 import { Numbers } from './components/Numbers.tsx';
 import { Contato } from './components/Contato.tsx';
+import { Footer } from './components/Footer.tsx';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,6 +22,9 @@ function App() {
           <Faq />
           <Contato />
         </div>
+        <footer className="col-start-3 col-end-5">
+          <Footer />
+        </footer>
         {/* Modal de Login */}
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </Layout>
