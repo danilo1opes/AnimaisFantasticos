@@ -1,21 +1,39 @@
-import { useState } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { animaisData } from '../Data/AnimalsParagraphs';
 import type { FaqProps } from '../interfaces/types';
 import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
 
 export function Introduction({ id }: FaqProps) {
-  const world = 'Animais Fantásticos';
   const [selectedAnimalIndex, setSelectedAnimalIndex] = useState(0);
   const { ref, inFadeIn } = useScrollFadeIn<HTMLDivElement>();
 
-  const animalImages = [
-    '/img/bear.jpg',
-    '/img/fox.jpg',
-    '/img/lion.jpg',
-    '/img/monkey.jpg',
-    '/img/squirrel.jpg',
-    '/img/wolf.jpg',
-  ];
+  // Mova para um objeto para reduzir re-renders
+  const animalImages = useMemo(
+    () => [
+      '/img/bear.jpg',
+      '/img/fox.jpg',
+      '/img/lion.jpg',
+      '/img/monkey.jpg',
+      '/img/squirrel.jpg',
+      '/img/wolf.jpg',
+    ],
+    []
+  );
+
+  // Otimize o handler de clique
+  const handleAnimalClick = useCallback((e: React.MouseEvent) => {
+    const li = (e.target as HTMLElement).closest('li');
+    if (li) {
+      const index = Array.from(li.parentElement?.children || []).indexOf(li);
+      setSelectedAnimalIndex(index);
+    }
+  }, []);
+
+  // Só renderize os parágrafos do animal selecionado
+  const selectedAnimalData = useMemo(
+    () => animaisData[selectedAnimalIndex],
+    [selectedAnimalIndex]
+  );
 
   return (
     <section
@@ -26,15 +44,12 @@ export function Introduction({ id }: FaqProps) {
       }`}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1fr_2fr] gap-6 px-6 md:px-10 mb-16">
-        {/* Título */}
+        {/* Título - Otimizado para não re-renderizar */}
         <div className="col-span-1 md:col-span-2">
           <h1 className="text-5xl max-[320px]:text-4xl md:text-5xl lg:text-6xl xl:text-[6rem] mt-8 leading-tight uppercase">
-            {world.split(' ').map((word, index) => (
-              <span key={index}>
-                {word}
-                {index < world.split(' ').length - 1 && <br />}
-              </span>
-            ))}
+            <span>Animais</span>
+            <br />
+            <span>Fantásticos</span>
           </h1>
         </div>
 
@@ -42,29 +57,28 @@ export function Introduction({ id }: FaqProps) {
         <div className="md:col-span-2 xl:col-span-1">
           <ul
             className="h-[370px] max-h-[300px] md:max-h-[370px] overflow-auto cursor-pointer border border-brand-cardBorder rounded-lg p-2"
-            onClick={(e) => {
-              const li = (e.target as HTMLElement).closest('li');
-              if (li) {
-                const index = Array.from(
-                  li.parentElement?.children || []
-                ).indexOf(li);
-                setSelectedAnimalIndex(index);
-              }
-            }}
+            onClick={handleAnimalClick}
           >
             {animalImages.map((imageSrc, index) => (
               <li
-                key={index}
+                key={`animal-${index}`}
                 className={`flex items-center gap-2 p-2 transition-all rounded-lg ${
                   selectedAnimalIndex === index
                     ? 'bg-brand-cardBorder'
                     : 'hover:bg-brand-surfaceLight'
                 }`}
               >
+                {/* Lazy loading das imagens */}
                 <img
                   className="w-16 h-16 object-cover rounded-lg"
                   src={imageSrc}
-                  alt={`Animal ${index + 1}`}
+                  alt={`${animaisData[index].nome}`}
+                  loading="lazy"
+                  decoding="async"
+                  style={{
+                    willChange:
+                      selectedAnimalIndex === index ? 'auto' : 'unset',
+                  }}
                 />
                 <span className="text-lg font-semibold capitalize">
                   {animaisData[index].nome}
@@ -78,11 +92,14 @@ export function Introduction({ id }: FaqProps) {
         <div className="col-span-1 md:col-span-2 xl:col-span-1">
           <section className="bg-brand-gray p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-3 border-b pb-2">
-              {animaisData[selectedAnimalIndex].nome}
+              {selectedAnimalData.nome}
             </h2>
-            {animaisData[selectedAnimalIndex].descricao.map(
+            {selectedAnimalData.descricao.map(
               (paragrafo: string, index: number) => (
-                <p key={index} className="text-base leading-relaxed mb-3">
+                <p
+                  key={`paragraph-${index}`}
+                  className="text-base leading-relaxed mb-3"
+                >
                   {paragrafo}
                 </p>
               )
