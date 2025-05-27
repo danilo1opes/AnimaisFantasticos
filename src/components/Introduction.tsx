@@ -19,7 +19,7 @@ export function Introduction() {
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1fr_2fr] gap-6 px-6 md:px-10 mb-16">
       {/* Título */}
       <div className="col-span-1 md:col-span-2">
-        <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[6rem] leading-tight uppercase">
+        <h1 className="text-5xl max-[320px]:text-4xl md:text-5xl lg:text-6xl xl:text-[6rem] mt-8 leading-tight uppercase">
           {world.split(' ').map((word, index) => (
             <span key={index}>
               {word}

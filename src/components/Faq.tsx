@@ -16,7 +16,7 @@ export function Faq() {
     <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 md:mt-20 sm:mt-8 mb-12 sm:mb-16">
       {/* Título */}
       <div className="mb-8 sm:mb-12">
-        <h1 className="text-5xl mt-12 sm:text-4xl md:text-5xl lg:text-6xl xl:text-[6rem] leading-tight uppercase">
+        <h1 className="text-5xl mt-12 max-[320px]:text-4xl md:text-5xl lg:text-6xl xl:text-[6rem] leading-tight uppercase">
           Faq
         </h1>
       </div>
