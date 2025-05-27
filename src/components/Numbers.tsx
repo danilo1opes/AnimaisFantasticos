@@ -3,12 +3,30 @@ import { HiOutlineHashtag } from 'react-icons/hi';
 import { numbersData } from '../Data/NumbersData';
 import { useInView } from 'react-intersection-observer';
 import { useCountUpOnView } from '../hooks/useCountUpOnView';
+import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
+import { useCallback } from 'react';
 
 export function Numbers() {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  const { ref: refInView, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+  const { ref: refFadeIn, inFadeIn } = useScrollFadeIn<HTMLDivElement>();
 
+  const setRefs = useCallback(
+    (node: HTMLDivElement | null) => {
+      refInView(node);
+      refFadeIn.current = node;
+    },
+    [refInView, refFadeIn]
+  );
   return (
-    <section ref={ref}>
+    <section
+      ref={setRefs}
+      className={`transition-opacity duration-700 ease-in-out transform ${
+        inFadeIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       <div className="uppercase flex items-center justify-start gap-2">
         <HiOutlineHashtag className="ml-6 w-6 h-6 md:w-10 md:h-10 text-brand-red" />
         <h1 className="text-5xl max-[320px]:text-4xl xl:text-[6rem]/[1.1]">
