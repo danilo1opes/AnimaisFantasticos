@@ -13,14 +13,14 @@ function App() {
   return (
     <>
       <Layout>
-        <main className="col-start-3 col-end-5">
+        <main className="col-start-3 col-end-5 scroll-smooth">
           <Navbar onLoginClick={() => setIsModalOpen(true)} />
         </main>
-        <div className="md:col-start-2 md:col-end-5 box-border">
-          <Introduction />
+        <div className="md:col-start-2 md:col-end-5 box-border scroll-smooth">
+          <Introduction id="animais" />
           <Numbers />
-          <Faq />
-          <Contato />
+          <Faq id="faq" />
+          <Contato id="contato" />
         </div>
         <footer className="col-start-3 col-end-5">
           <Footer />

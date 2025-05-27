@@ -19,3 +19,6 @@ export interface StatCard {
   value: number | string;
   color?: string;
 }
+export interface FaqProps {
+  id?: string;
+}

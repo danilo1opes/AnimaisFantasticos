@@ -4,11 +4,21 @@ import {
   MdLocationPin,
   MdOutlinePhone,
 } from 'react-icons/md';
+import type { FaqProps } from '../interfaces/types';
+import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
 
-export function Contato() {
+export function Contato({ id }: FaqProps) {
+  const { ref, inFadeIn } = useScrollFadeIn<HTMLDivElement>();
+
   return (
-    <>
-      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 md:mt-20 sm:mt-8 mb-12 sm:mb-16">
+    <section
+      id={id}
+      ref={ref}
+      className={`transition-opacity duration-700 ease-in-out transform ${
+        inFadeIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 md:mt-20 sm:mt-8 mb-12 sm:mb-16">
         <div className="uppercase flex items-center justify-start gap-2 mb-8 sm:mb-12">
           <h1 className="text-5xl max-[320px]:text-4xl xl:text-[6rem]/[1.1]">
             Contato
@@ -49,7 +59,7 @@ export function Contato() {
             </ul>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
