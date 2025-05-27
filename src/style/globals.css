@@ -18,6 +18,11 @@
     box-sizing: border-box;
   }
 
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
   span,
   h2,
   h3,
