@@ -10,7 +10,9 @@ export function Contato() {
     <>
       <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 md:mt-20 sm:mt-8 mb-12 sm:mb-16">
         <div className="uppercase flex items-center justify-start gap-2 mb-8 sm:mb-12">
-          <h1 className="text-5xl xl:text-[6rem]/[1.1]">Contato</h1>
+          <h1 className="text-5xl max-[320px]:text-4xl xl:text-[6rem]/[1.1]">
+            Contato
+          </h1>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
