@@ -7,7 +7,6 @@ export function Introduction({ id }: FaqProps) {
   const [selectedAnimalIndex, setSelectedAnimalIndex] = useState(0);
   const { ref, inFadeIn } = useScrollFadeIn<HTMLDivElement>();
 
-  // Mova para um objeto para reduzir re-renders
   const animalImages = useMemo(
     () => [
       '/img/bear.jpg',
@@ -20,7 +19,6 @@ export function Introduction({ id }: FaqProps) {
     []
   );
 
-  // Otimize o handler de clique
   const handleAnimalClick = useCallback((e: React.MouseEvent) => {
     const li = (e.target as HTMLElement).closest('li');
     if (li) {
@@ -29,7 +27,6 @@ export function Introduction({ id }: FaqProps) {
     }
   }, []);
 
-  // Só renderize os parágrafos do animal selecionado
   const selectedAnimalData = useMemo(
     () => animaisData[selectedAnimalIndex],
     [selectedAnimalIndex]
@@ -44,7 +41,7 @@ export function Introduction({ id }: FaqProps) {
       }`}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1fr_2fr] gap-6 px-6 md:px-10 mb-16">
-        {/* Título - Otimizado para não re-renderizar */}
+        {/* Título */}
         <div className="col-span-1 md:col-span-2">
           <h1 className="text-5xl max-[320px]:text-4xl md:text-5xl lg:text-6xl xl:text-[6rem] mt-8 leading-tight uppercase">
             <span>Animais</span>
