@@ -1,54 +1,48 @@
-# React + TypeScript + Vite
+# Animais Fantásticos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 Sobre o Projeto
 
-Currently, two official plugins are available:
+**Animais Fantásticos** é uma aplicação web desenvolvida onde foi inicialmente inspirado em um curso da Origamid, mas foi totalmente remodelado por mim. Reestruturei o código, redesenhei a interface e adicionei novas funcionalidades juntamente com um layout responsivo, utilizando React, TypeScript, Tailwind CSS e Vite. O intuito deste website e para conscientizar sobre a preservação de espécies ameaçadas de extinção. O projeto apresenta informações sobre diferentes animais (como lobos, raposas, esquilos e ursos), exibe estatísticas sobre o número de espécies, também oferece uma seção de perguntas frequentes (FAQ) com orientações sobre como ajudar na proteção dessas espécies, e também uma seção de contato com algumas informações minhas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Funcionalidades
 
-## Expanding the ESLint configuration
+- **Navegação Intuitiva**: Barra de navegação com links para seções como "Animais", "FAQ" e "Contato".
+- **Estatísticas**: Exibe números atualizados sobre populações de animais ameaçados.
+- **FAQ**: Responde a perguntas comuns sobre preservação de espécies.
+- **Modal de Login**: Interface para login, acessível via botão na barra de navegação.
+- **Design Responsivo**: Layout adaptável para dispositivos móveis e desktops.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tecnologias Utilizadas
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Figma**: Para Prototipagem do projeto.
+- **React**: Biblioteca JavaScript para construção de interfaces.
+- **TypeScript**: Para tipagem estática e maior segurança no código.
+- **Vite**: Ferramenta de build rápida e otimizada.
+- **Tailwind CSS**: Framework de estilização.
+- **Vercel**: Configuração para deploy (presente no `vercel.json`).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🌐 Deploy
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+O projeto está configurado para deploy na Vercel.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📂 Estrutura do Projeto
+
+- **`App.tsx`**: Componente principal que gerencia o estado do modal de login e organiza as seções da página.
+- **`Layout.tsx`**: Define o layout responsivo da aplicação, usando um grid para desktops e um layout em coluna para dispositivos móveis.
+- **`components/`**: Contém os componentes reutilizáveis como `Navbar`, `Modal`, `Introduction`, `Faq`, `Numbers`, `Contato` e `Footer`.
+- **`hooks/`**: Contém custom hooks do React, como `useForm.ts`, `useCountUpOnView.ts`, `useScrollFadeIn.ts` para gerenciar estados.
+- **`interface/`**: Contém todas as definições de tipos e interfaces do TypeScript que são utilizadas no projeto.
+- **`data/`**: Contém dados estáticos, como `NumbersData.ts` com informações sobre os numeros dos animais e perguntas do FAQ.
+- **`styles/`**: Contém os estilos globais utilziados.
+
+## 🤝 Como Contribuir
+
+- Contribua para o projeto e faça um fork do repositório.
+
+## 📬 Contato
+
+Para dúvidas ou sugestões, acesse a seção "Contato" na aplicação ou envie um e-mail para [parceriasnyx@gmail.com].
+
+---
+
+Feito com ❤️ por Danilo Lopes!
